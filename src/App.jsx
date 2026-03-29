@@ -84,6 +84,9 @@ export default function ForeverTide(){
   const [sent,setSent]=useState(false);const [menuOpen,setMenuOpen]=useState(false);
   const [hc,setHc]=useState(null);const [oF,setOF]=useState(null);const [vis,setVis]=useState({});
   const [submitting,setSubmitting]=useState(false);
+  const [reviews,setReviews]=useState([]);const [showReview,setShowReview]=useState(false);
+  const [reviewData,setReviewData]=useState({name:'',event_type:'',city:'',rating:5,review:''});
+  const [reviewSent,setReviewSent]=useState(false);const [reviewSubmitting,setReviewSubmitting]=useState(false);
 
   const c1=useCounter("500",1800,!!vis.stats);
   const c2=useCounter("80",1400,!!vis.stats);
@@ -92,6 +95,8 @@ export default function ForeverTide(){
   useEffect(()=>{const h=()=>setScrollY(window.scrollY);window.addEventListener("scroll",h,{passive:true});return()=>window.removeEventListener("scroll",h);},[]);
   useEffect(()=>{const obs=new IntersectionObserver((es)=>{es.forEach((e)=>{if(e.isIntersecting)setVis((p)=>({...p,[e.target.id]:true}));});},{threshold:.08});document.querySelectorAll("[data-animate]").forEach((el)=>obs.observe(el));return()=>obs.disconnect();},[]);
 
+  useEffect(()=>{fetch("/api/reviews").then(r=>r.json()).then(d=>{if(Array.isArray(d))setReviews(d);}).catch(()=>{});},[reviewSent]);
+  const submitReview=async()=>{if(!reviewData.name||!reviewData.review){alert('Please enter your name and review.');return;}setReviewSubmitting(true);try{await fetch("/api/reviews",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(reviewData)});setReviewSent(true);}catch(e){}setReviewSubmitting(false);};
   const go=(id)=>{setMenuOpen(false);document.getElementById(id)?.scrollIntoView({behavior:"smooth"});};
   const nb=scrollY>60;const NAV=["Experience","Packages","Chains","FAQ","Book Now"];
   const lbl={fontFamily:"'Questrial',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:C.dustyRose,marginBottom:16,textAlign:"center"};
@@ -380,6 +385,69 @@ export default function ForeverTide(){
           </div>
         </div>
       </section>
+
+
+      {/* REVIEWS */}
+      <section id="reviews" className="a1" style={{padding:"100px 24px",position:"relative"}}>
+        <SF size={36} color={C.sandBeige} style={{position:"absolute",top:30,left:40,animation:"dS 15s ease infinite"}} op={.1}/>
+        <div data-animate id="s9" className={`av ${vis.s9?"vi":""}`} style={{maxWidth:900,margin:"0 auto"}}>
+          <div style={{textAlign:"center",marginBottom:48}}>
+            <div style={lbl}>Reviews</div>
+            <h2 style={hd()}>What Our Guests Say</h2>
+            <button className="btn bk" style={{marginTop:24,padding:"14px 36px",fontSize:11}} onClick={()=>{setShowReview(true);setReviewSent(false);}}>Write a Review</button>
+          </div>
+
+          {/* Existing testimonials + live reviews */}
+          <div style={{display:"grid",gap:20}}>
+            {[...TESTS.map((t,i)=>({name:t.n,review:t.t,event_type:t.e.split(",")[0],city:t.e.split(",")[1]?.trim(),rating:5})),...reviews].map((r,i)=>(
+              <div key={i} style={{padding:"28px 32px",background:"rgba(255,255,255,.55)",borderRadius:8,border:`1px solid ${C.grayBlue}22`,backdropFilter:"blur(4px)"}}>
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:14,flexWrap:"wrap",gap:8}}>
+                  <div>
+                    <div style={{fontFamily:"'Marcellus',serif",fontSize:18,color:C.steelDark}}>{r.name}</div>
+                    <div style={{fontFamily:"'Questrial',sans-serif",fontSize:10,letterSpacing:2,textTransform:"uppercase",color:C.dustyRose,marginTop:2}}>{r.event_type}{r.city?`, ${r.city}`:""}</div>
+                  </div>
+                  <div style={{display:"flex",gap:4}}>{[...Array(r.rating||5)].map((_,j)=><MS key={j} size={14} color={C.sandBeige} style={{opacity:.7}}/>)}</div>
+                </div>
+                <p style={{...bd(17),textAlign:"left",lineHeight:1.7}}>{r.review}</p>
+              </div>
+            ))}
+          </div>
+          {reviews.length===0&&<p style={{...bd(15),color:C.textLight,fontStyle:"italic",marginTop:20,textAlign:"center"}}>Be the first to share your Forever Tide experience.</p>}
+        </div>
+      </section>
+
+      {/* WRITE REVIEW MODAL */}
+      <div className={`fm ${showReview?"fv":""}`}>
+        <div className="fm-bg" onClick={()=>setShowReview(false)}/>
+        <div className="fm-box">
+          <div style={{position:"absolute",top:16,right:20,cursor:"pointer",fontSize:24,color:C.textLight}} onClick={()=>setShowReview(false)}>{String.fromCharCode(215)}</div>
+          {reviewSent?(<div style={{textAlign:"center",padding:"40px 0"}}>
+            <SF size={48} color={C.sandBeige} style={{margin:"0 auto 20px"}} op={.4}/>
+            <h3 style={{fontFamily:"'Marcellus',serif",fontSize:28,color:C.steelDark,marginBottom:12}}>Thank You</h3>
+            <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:19,color:C.textMed,lineHeight:1.6}}>Your review has been submitted. We appreciate you sharing your experience!</p>
+            <button className="btn bf" style={{marginTop:32}} onClick={()=>setShowReview(false)}>Close</button>
+          </div>):(
+          <>
+            <div style={{textAlign:"center",marginBottom:28}}>
+              <h3 style={{fontFamily:"'Marcellus',serif",fontSize:26,color:C.steelDark,marginBottom:6}}>Share Your Experience</h3>
+              <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:17,color:C.textLight,fontStyle:"italic"}}>Tell us about your Forever Tide moment.</p>
+            </div>
+            <label>Your Name *</label>
+            <input type="text" placeholder="First name and last initial" value={reviewData.name} onChange={(e)=>setReviewData(p=>({...p,name:e.target.value}))}/>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+              <div><label>Event Type</label><select value={reviewData.event_type} onChange={(e)=>setReviewData(p=>({...p,event_type:e.target.value}))}><option value="">Select</option><option>Bachelorette</option><option>Bridal Shower</option><option>Birthday</option><option>Private Appointment</option><option>Pop-Up</option><option>Social Club</option><option>Corporate Event</option><option>Other</option></select></div>
+              <div><label>City</label><input type="text" placeholder="Naples, Tampa..." value={reviewData.city} onChange={(e)=>setReviewData(p=>({...p,city:e.target.value}))}/></div>
+            </div>
+            <label>Rating</label>
+            <div style={{display:"flex",gap:8,marginBottom:8}}>{[1,2,3,4,5].map(n=>(<div key={n} onClick={()=>setReviewData(p=>({...p,rating:n}))} style={{cursor:"pointer",opacity:n<=reviewData.rating?1:.3,transition:"opacity .2s"}}><MS size={24} color={C.sandBeige}/></div>))}</div>
+            <label>Your Review *</label>
+            <textarea placeholder="What made your experience special?" value={reviewData.review} onChange={(e)=>setReviewData(p=>({...p,review:e.target.value}))} style={{minHeight:100}}/>
+            <div style={{marginTop:28,textAlign:"center"}}>
+              <button className="btn bf" style={{width:"100%",padding:"18px 0",fontSize:13,opacity:reviewSubmitting?.6:1}} onClick={submitReview} disabled={reviewSubmitting}>{reviewSubmitting?"Submitting...":"Submit Review"}</button>
+            </div>
+          </>)}
+        </div>
+      </div>
 
       {/* FAQ */}
       <section id="faq" className="a2" style={{padding:"100px 24px",position:"relative"}}>
