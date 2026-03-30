@@ -137,14 +137,14 @@ export default function ForeverTide(){
   const go=(id)=>{setMenuOpen(false);document.getElementById(id)?.scrollIntoView({behavior:"smooth"});};
   const nb=scrollY>60;const NAV=["Experience","Packages","Chains","FAQ","Book Now"];
   const lbl={fontFamily:"'Righteous',cursive",fontSize:13,letterSpacing:3,textTransform:"uppercase",color:C.dustyRose,marginBottom:16,textAlign:"center"};
-  const hd=(sz)=>({fontFamily:"'Great Vibes',cursive",color:C.steelDark,fontWeight:400,lineHeight:1.2,fontSize:sz||"clamp(38px,5vw,58px)",textAlign:"center"});
+  const hd=(sz)=>({fontFamily:"'Brittany Signature',cursive",color:C.steelDark,fontWeight:400,lineHeight:1.2,fontSize:sz||"clamp(38px,5vw,58px)",textAlign:"center"});
   const bd=(sz)=>({fontFamily:"'Cormorant Garamond',serif",fontWeight:400,lineHeight:1.75,color:C.textMed,fontSize:sz||19,textAlign:"center"});
   const surf={fontFamily:"'Righteous',cursive"};
 
   return (
     <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",background:C.ivory,color:C.textDark,overflowX:"hidden"}}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Questrial&family=Marcellus&family=Great+Vibes&family=Righteous&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Questrial&family=Marcellus&family=Righteous&display=swap');@import url('https://fonts.cdnfonts.com/css/brittany-signature');
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
         @keyframes hr{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
         @keyframes gp{0%,100%{box-shadow:0 0 0 0 rgba(124,145,159,.3)}50%{box-shadow:0 0 0 14px rgba(124,145,159,0)}}
@@ -245,7 +245,7 @@ export default function ForeverTide(){
           <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(18px,2.4vw,24px)",fontWeight:400,fontStyle:"italic",color:C.textDark,lineHeight:1.7,marginBottom:24}}>
             Some things leave a mark that never fades. A person you love, a place that changed you, a moment you still carry. <strong style={{fontWeight:700}}>Forever Tide</strong> turns that connection into something you can hold onto. A way to stay forever tied to whatever means the most.
           </p>
-          <p style={{...surf,fontSize:"clamp(12px,1.5vw,15px)",color:C.textLight,maxWidth:500,margin:"0 auto 48px",letterSpacing:1,lineHeight:1.8}}>
+          <p style={{fontFamily:"'Questrial',sans-serif",fontSize:"clamp(12px,1.5vw,15px)",color:C.textLight,maxWidth:500,margin:"0 auto 48px",letterSpacing:1,lineHeight:1.8}}>
             Custom-fit, claspless permanent jewelry welded on-site at your event. Serving all of Florida.
           </p>
         </div>
@@ -257,7 +257,7 @@ export default function ForeverTide(){
           <button className="btn bsand" style={{padding:"16px 48px",fontSize:12}} onClick={()=>go("packages")}>View Packages</button>
         </div>
         <div data-animate id="stats" style={{animation:"hr 1s ease forwards",animationDelay:"1.7s",opacity:0,marginTop:56,display:"flex",gap:56,flexWrap:"wrap",justifyContent:"center",zIndex:2}}>
-          {[{v:c1,s:"+",l:"Guests Linked"},{v:c2,s:"+",l:"Events Hosted"},{v:c3,s:"",l:"Florida Cities"}].map((s,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontFamily:"'Great Vibes',cursive",fontSize:42,color:C.steelDark,lineHeight:1}}>{s.v}{s.s}</div><div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.textLight,marginTop:8}}>{s.l}</div></div>))}
+          {[{v:c1,s:"+",l:"Guests Linked"},{v:c2,s:"+",l:"Events Hosted"},{v:c3,s:"",l:"Florida Cities"}].map((s,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:42,color:C.steelDark,lineHeight:1}}>{s.v}{s.s}</div><div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.textLight,marginTop:8}}>{s.l}</div></div>))}
         </div>
         <div style={{position:"absolute",bottom:0,left:0,right:0,height:120,zIndex:1}}>
           <svg viewBox="0 0 1350 120" preserveAspectRatio="none" style={{position:"absolute",bottom:0,width:"100%",height:120}}>
@@ -326,7 +326,7 @@ export default function ForeverTide(){
           <p style={{...bd(18),color:C.textLight,fontStyle:"italic",marginBottom:56}}>Simple for you. Magical for your guests.</p>
           <div className="gs" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:0,textAlign:"center"}}>
             {STEPS.map((step,i)=>(<div key={i} style={{padding:"36px 36px",borderBottom:i<2?`1px solid ${C.grayBlue}33`:"none",borderRight:i%2===0?`1px solid ${C.grayBlue}33`:"none",transition:"all .6s",transitionDelay:`${i*.15}s`,opacity:vis.s2?1:0,transform:vis.s2?"translateY(0)":"translateY(20px)",background:"rgba(255,255,255,.35)"}}>
-              <div style={{fontFamily:"'Great Vibes',cursive",fontSize:48,color:C.coolBlue,marginBottom:10}}>{step.n}</div>
+              <div style={{fontFamily:"'Brittany Signature',cursive",fontSize:48,color:C.coolBlue,marginBottom:10}}>{step.n}</div>
               <h3 style={{...surf,fontSize:18,color:C.steelDark,marginBottom:12,textTransform:"uppercase",letterSpacing:2}}>{step.t}</h3>
               <p style={bd(17)}>{step.d}</p>
             </div>))}
@@ -344,7 +344,7 @@ export default function ForeverTide(){
             {[{name:"The Ripple",sz:"5 to 10 guests",price:"No setup fee",hl:0},{name:"The Wave",sz:"10 to 25 guests",price:"Complimentary setup for 15+",hl:1},{name:"The Surge",sz:"25+ guests",price:"Custom quote",hl:2}].map((pkg,i)=>(<div key={i} style={{padding:32,background:pkg.hl===1?`linear-gradient(170deg,${C.steel},${C.steelDeep})`:pkg.hl===2?`linear-gradient(170deg,${C.warmBlush}88,${C.dustyPink}88)`:"rgba(255,255,255,.65)",borderRadius:6,border:pkg.hl===1?"none":`1px solid ${C.grayBlue}33`,color:pkg.hl===1?"#fff":C.textDark,textAlign:"center",position:"relative",transition:"all .5s",transitionDelay:`${i*.12}s`,opacity:vis.s2b?1:0,transform:vis.s2b?"translateY(0)":"translateY(28px)"}}>
               {pkg.hl===1&&<div style={{position:"absolute",top:14,right:14,...surf,fontSize:9,letterSpacing:2,textTransform:"uppercase",background:C.sandBeige,color:C.textDark,padding:"4px 10px",borderRadius:12}}>Most Booked</div>}
               <div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:pkg.hl===1?C.sandBeige:C.dustyRose,marginBottom:12}}>{pkg.sz}</div>
-              <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:34,fontWeight:400,marginBottom:14,color:pkg.hl===1?"#fff":C.steelDark}}>{pkg.name}</h3>
+              <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:34,fontWeight:400,marginBottom:14,color:pkg.hl===1?"#fff":C.steelDark}}>{pkg.name}</h3>
               <div style={{...surf,fontSize:11,letterSpacing:2,color:pkg.hl===1?C.sandBeige:C.dustyRose,marginBottom:20}}>{pkg.price}</div>
               <button className="btn" style={{width:"100%",borderColor:pkg.hl===1?C.sandBeige:C.steel,color:pkg.hl===1?C.sandBeige:C.steel,padding:"14px 0",fontSize:11}} onClick={()=>setShowForm(true)}>Book This Package</button>
             </div>))}
@@ -352,7 +352,7 @@ export default function ForeverTide(){
           <div style={{background:"rgba(255,255,255,.5)",borderRadius:8,overflow:"hidden",border:`1px solid ${C.grayBlue}22`}}>
             <div className="ctbl" style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr",fontSize:15}}>
               <div style={{padding:"16px 20px",...surf,fontSize:10,letterSpacing:2,textTransform:"uppercase",color:C.textLight,borderBottom:`1px solid ${C.grayBlue}22`}}>What's Included</div>
-              {["The Ripple","The Wave","The Surge"].map(n=>(<div key={n} style={{padding:"16px 12px",fontFamily:"'Great Vibes',cursive",fontSize:18,color:C.steelDark,textAlign:"center",borderBottom:`1px solid ${C.grayBlue}22`,borderLeft:`1px solid ${C.grayBlue}22`}}>{n}</div>))}
+              {["The Ripple","The Wave","The Surge"].map(n=>(<div key={n} style={{padding:"16px 12px",fontFamily:"'Brittany Signature',cursive",fontSize:18,color:C.steelDark,textAlign:"center",borderBottom:`1px solid ${C.grayBlue}22`,borderLeft:`1px solid ${C.grayBlue}22`}}>{n}</div>))}
               {COMPARE.map((row,i)=>(<React.Fragment key={i}>
                 <div style={{padding:"14px 20px",fontFamily:"'Cormorant Garamond',serif",fontSize:16,color:C.textMed,borderBottom:i<COMPARE.length-1?`1px solid ${C.grayBlue}11`:"none"}}>{row.f}</div>
                 {[row.a,row.b,row.c].map((v,j)=>(<div key={j} style={{padding:"14px 12px",fontFamily:"'Cormorant Garamond',serif",fontSize:15,color:C.textDark,textAlign:"center",borderLeft:`1px solid ${C.grayBlue}22`,borderBottom:i<COMPARE.length-1?`1px solid ${C.grayBlue}11`:"none"}}>{v}</div>))}
@@ -377,7 +377,7 @@ export default function ForeverTide(){
               <ChainVis type={ch.vis} color={C.taupe}/>
               <div style={{padding:"0 28px 28px",textAlign:"center"}}>
                 <div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.dustyRose,marginBottom:8}}>{ch.tag}</div>
-                <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:28,color:C.steelDark,marginBottom:8}}>{ch.name}</h3>
+                <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:28,color:C.steelDark,marginBottom:8}}>{ch.name}</h3>
                 <p style={{...bd(16),color:C.textLight,lineHeight:1.6}}>{ch.desc}</p>
               </div>
             </div>))}
@@ -390,12 +390,12 @@ export default function ForeverTide(){
         <SF size={44} color={C.sandBeige} style={{position:"absolute",bottom:"6%",left:"4%",animation:"dS 12s ease infinite"}} op={.06}/>
         <SD size={36} color={C.sandBeige} style={{position:"absolute",top:"10%",right:"4%",animation:"dM 15s ease infinite"}} op={.05}/>
         <div data-animate id="s4" className={`av ${vis.s4?"vi":""}`} style={{maxWidth:1100,margin:"0 auto"}}>
-          <div style={{textAlign:"center",marginBottom:48}}><div style={{...lbl,color:C.sandBeige}}>Kind Words</div><h2 style={{fontFamily:"'Great Vibes',cursive",fontSize:"clamp(34px,4.5vw,52px)",color:"#fff",fontWeight:400,textAlign:"center"}}>What Hosts Are Saying</h2></div>
+          <div style={{textAlign:"center",marginBottom:48}}><div style={{...lbl,color:C.sandBeige}}>Kind Words</div><h2 style={{fontFamily:"'Brittany Signature',cursive",fontSize:"clamp(34px,4.5vw,52px)",color:"#fff",fontWeight:400,textAlign:"center"}}>What Hosts Are Saying</h2></div>
           <div className="g3" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:24}}>
             {TESTS.map((t,i)=>(<div key={i} style={{padding:32,background:"rgba(255,255,255,.07)",borderRadius:6,border:"1px solid rgba(255,255,255,.1)",textAlign:"center",transitionDelay:`${i*.15}s`,opacity:vis.s4?1:0,transform:vis.s4?"translateY(0)":"translateY(20px)",transition:"all .6s"}}>
               <MS size={16} color={C.sandBeige} style={{margin:"0 auto 14px",opacity:.6}}/>
               <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:17,lineHeight:1.75,color:"rgba(255,255,255,.88)",fontWeight:400,marginBottom:22,textAlign:"center"}}>{t.t}</p>
-              <div style={{fontFamily:"'Great Vibes',cursive",fontSize:20,color:"#fff"}}>{t.n}</div>
+              <div style={{fontFamily:"'Brittany Signature',cursive",fontSize:20,color:"#fff"}}>{t.n}</div>
               <div style={{...surf,fontSize:10,letterSpacing:2,textTransform:"uppercase",color:C.sandBeige,marginTop:6}}>{t.e}</div>
             </div>))}
           </div>
@@ -421,7 +421,7 @@ export default function ForeverTide(){
           <div className="pfg" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
             <div className="pf" style={{gridRow:"1/3",aspectRatio:"3/5"}}><img src={IC} alt="Sammy" style={{objectPosition:"center top"}}/></div>
             <div className="pf" style={{aspectRatio:"1/1"}}><img src={IP} alt="Sammy" style={{objectPosition:"center 15%"}}/></div>
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:`linear-gradient(135deg,${C.warmBlush}55,${C.sandBeige}55)`,borderRadius:6,padding:20,textAlign:"center"}}><SF size={24} color={C.steelDark} op={.25}/><div style={{fontFamily:"'Great Vibes',cursive",fontSize:20,color:C.steelDark,marginTop:8}}>All Across<br/>Florida</div></div>
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:`linear-gradient(135deg,${C.warmBlush}55,${C.sandBeige}55)`,borderRadius:6,padding:20,textAlign:"center"}}><SF size={24} color={C.steelDark} op={.25}/><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:20,color:C.steelDark,marginTop:8}}>All Across<br/>Florida</div></div>
           </div>
         </div>
       </section>
@@ -434,7 +434,7 @@ export default function ForeverTide(){
           <div style={lbl}>Service Areas</div><h2 style={{...hd("clamp(32px,4vw,48px)"),marginBottom:48}}>Where We Spark</h2>
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:14}}>
             {LOCS.map((l,i)=>(<div key={i} className="lc" style={{padding:"24px 16px",background:"rgba(255,255,255,.55)",borderRadius:6,border:`1px solid ${C.grayBlue}22`,textAlign:"center",transitionDelay:`${i*.08}s`,opacity:vis.s6?1:0,transform:vis.s6?"translateY(0)":"translateY(20px)",transition:"all .55s"}}>
-              <div style={{fontFamily:"'Great Vibes',cursive",fontSize:24,color:C.steelDark,marginBottom:4}}>{l.c}</div>
+              <div style={{fontFamily:"'Brittany Signature',cursive",fontSize:24,color:C.steelDark,marginBottom:4}}>{l.c}</div>
               <div style={{...surf,fontSize:9,letterSpacing:2,color:C.textLight,textTransform:"uppercase",marginBottom:8}}>{l.r}</div>
               <div style={{...surf,fontSize:9,letterSpacing:2,color:C.dustyRose,textTransform:"uppercase",padding:"4px 8px",background:C.dustyRose+"22",borderRadius:20,display:"inline-block"}}>{l.s}</div>
             </div>))}
@@ -456,7 +456,7 @@ export default function ForeverTide(){
               <div key={i} style={{padding:"28px 32px",background:"rgba(255,255,255,.55)",borderRadius:8,border:`1px solid ${C.grayBlue}22`}}>
                 <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:14,flexWrap:"wrap",gap:8}}>
                   <div>
-                    <div style={{fontFamily:"'Great Vibes',cursive",fontSize:22,color:C.steelDark}}>{r.name}</div>
+                    <div style={{fontFamily:"'Brittany Signature',cursive",fontSize:22,color:C.steelDark}}>{r.name}</div>
                     <div style={{...surf,fontSize:9,letterSpacing:2,textTransform:"uppercase",color:C.dustyRose,marginTop:2}}>{r.event_type}{r.city?`, ${r.city}`:""}</div>
                   </div>
                   <div style={{display:"flex",gap:4}}>{[...Array(r.rating||5)].map((_,j)=><MS key={j} size={14} color={C.sandBeige} style={{opacity:.7}}/>)}</div>
@@ -475,13 +475,13 @@ export default function ForeverTide(){
           <div style={{position:"absolute",top:16,right:20,cursor:"pointer",fontSize:24,color:C.textLight}} onClick={()=>setShowReview(false)}>{String.fromCharCode(215)}</div>
           {reviewSent?(<div style={{textAlign:"center",padding:"40px 0"}}>
             <SF size={48} color={C.sandBeige} style={{margin:"0 auto 20px"}} op={.4}/>
-            <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:32,color:C.steelDark,marginBottom:12}}>Thank You</h3>
+            <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:32,color:C.steelDark,marginBottom:12}}>Thank You</h3>
             <p style={{...bd(19)}}>Your review has been submitted. We appreciate you sharing your experience!</p>
             <button className="btn bf" style={{marginTop:32}} onClick={()=>setShowReview(false)}>Close</button>
           </div>):(
           <>
             <div style={{textAlign:"center",marginBottom:28}}>
-              <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:30,color:C.steelDark,marginBottom:6}}>Share Your Experience</h3>
+              <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:30,color:C.steelDark,marginBottom:6}}>Share Your Experience</h3>
               <p style={{...bd(17),fontStyle:"italic"}}>Tell us about your Forever Tide moment.</p>
             </div>
             <label>Your Name *</label>
@@ -507,7 +507,7 @@ export default function ForeverTide(){
         <CN size={26} color={C.taupe} style={{position:"absolute",bottom:40,left:30,animation:"dS 17s ease infinite"}} op={.08}/>
         <div data-animate id="s7" className={`av ${vis.s7?"vi":""}`} style={{maxWidth:720,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:48}}><div style={lbl}>Questions</div><h2 style={hd()}>Frequently Asked</h2></div>
-          {FAQS.map((faq,i)=>(<div key={i} style={{borderBottom:`1px solid ${C.grayBlue}33`,cursor:"pointer",background:"rgba(255,255,255,.35)",marginBottom:2,borderRadius:3}} onClick={()=>setOF(oF===i?null:i)}><div style={{padding:"22px 24px",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16}}><h3 style={{...surf,fontSize:15,color:C.steelDark,fontWeight:400,textAlign:"left",letterSpacing:1}}>{faq.q}</h3><div style={{fontFamily:"'Great Vibes',cursive",fontSize:30,color:C.coolBlue,transition:"transform .3s",transform:oF===i?"rotate(45deg)":"none",flexShrink:0}}>+</div></div><div className={`fq ${oF===i?"fo":""}`}><p style={{...bd(17),textAlign:"left"}}>{faq.a}</p></div></div>))}
+          {FAQS.map((faq,i)=>(<div key={i} style={{borderBottom:`1px solid ${C.grayBlue}33`,cursor:"pointer",background:"rgba(255,255,255,.35)",marginBottom:2,borderRadius:3}} onClick={()=>setOF(oF===i?null:i)}><div style={{padding:"22px 24px",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16}}><h3 style={{...surf,fontSize:15,color:C.steelDark,fontWeight:400,textAlign:"left",letterSpacing:1}}>{faq.q}</h3><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:30,color:C.coolBlue,transition:"transform .3s",transform:oF===i?"rotate(45deg)":"none",flexShrink:0}}>+</div></div><div className={`fq ${oF===i?"fo":""}`}><p style={{...bd(17),textAlign:"left"}}>{faq.a}</p></div></div>))}
         </div>
       </section>
 
@@ -539,14 +539,14 @@ export default function ForeverTide(){
           <div style={{position:"absolute",top:16,right:20,cursor:"pointer",fontSize:24,color:C.textLight}} onClick={()=>{setShowForm(false);setSent(false);}}>{String.fromCharCode(215)}</div>
           {sent?(<div style={{textAlign:"center",padding:"40px 0"}}>
             <SF size={48} color={C.sandBeige} style={{margin:"0 auto 20px"}} op={.4}/>
-            <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:32,color:C.steelDark,marginBottom:12}}>Request Received</h3>
+            <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:32,color:C.steelDark,marginBottom:12}}>Request Received</h3>
             <p style={{...bd(19)}}>Thank you, {formData.name||"friend"}! I will be in touch within 24 hours to confirm your appointment.</p>
             <button className="btn bf" style={{marginTop:32}} onClick={()=>{setShowForm(false);setSent(false);}}>Close</button>
           </div>):(
           <>
             <div style={{textAlign:"center",marginBottom:28}}>
               <img src={LOGO} alt="Forever Tide" style={{height:50,objectFit:"contain",marginBottom:12}}/>
-              <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:30,color:C.steelDark,marginBottom:6}}>Book Your Appointment</h3>
+              <h3 style={{fontFamily:"'Brittany Signature',cursive",fontSize:30,color:C.steelDark,marginBottom:6}}>Book Your Appointment</h3>
               <p style={{...bd(17),fontStyle:"italic"}}>Fill out the details below and I will confirm within 24 hours.</p>
             </div>
             <label>Your Name *</label>
