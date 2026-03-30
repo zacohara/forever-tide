@@ -277,10 +277,10 @@ export default function ForeverTide(){
           <h2 style={hd()}>How to Host</h2>
           <div className="g3" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:32,marginTop:40}}>
             {[{n:"01",t:"Pick a Date",d:"Choose your date and tell us about your group. We handle the rest."},{n:"02",t:"We Show Up",d:"Sammy arrives with the full setup: chains, charms, welding station, styling, everything."},{n:"03",t:"Guests Get Linked",d:"Each guest picks their chain, gets custom-fit, and leaves with a piece they will never take off."}].map((s,i)=>(
-              <div key={i} style={{textAlign:"center",padding:24,background:"rgba(255,255,255,.4)",borderRadius:8}}>
-                <div style={{width:56,height:56,borderRadius:"50%",background:C.steel,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",...surf,fontSize:20}}>{s.n}</div>
-                <h3 style={{fontFamily:"'Great Vibes',cursive",fontSize:28,color:C.steelDark,marginBottom:10}}>{s.t}</h3>
-                <p style={bd(16)}>{s.d}</p>
+              <div key={i} style={{textAlign:"center",padding:28,background:"rgba(255,255,255,.4)",borderRadius:8}}>
+                <div style={{width:64,height:64,borderRadius:"50%",background:C.steel,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 20px",fontFamily:"'Cormorant Garamond',serif",fontSize:28,fontWeight:300}}>{s.n}</div>
+                <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:26,color:C.steelDark,marginBottom:12,fontWeight:500,letterSpacing:1}}>{s.t}</h3>
+                <p style={bd(17)}>{s.d}</p>
               </div>))}
           </div>
           <button className="btn bk" style={{marginTop:36}} onClick={()=>setShowForm(true)}>Get Started</button>
