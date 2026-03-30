@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><title>Forever Tide DB Setup</title>
+<style>
+  body{font-family:system-ui;max-width:600px;margin:60px auto;padding:20px;background:#f4f0ec;color:#3a454f}
+  h1{color:#5e7585}button{background:#7C919F;color:#fff;border:none;padding:14px 32px;font-size:16px;cursor:pointer;border-radius:6px}
+  button:hover{background:#4a6070}pre{background:#fff;padding:16px;border-radius:8px;overflow-x:auto;font-size:13px}
+  .ok{color:#4a9;font-weight:bold}.err{color:#c44;font-weight:bold}
+</style></head><body>
+<h1>Forever Tide Database Setup</h1>
+<p>Click the button below to create the reviews and bookings tables in your Supabase project.</p>
+<button onclick="runMigration()">Create Tables</button>
+<pre id="log">Ready...</pre>
+<script>
+async function runMigration() {
+  const log = document.getElementById('log');
+  log.textContent = 'Running migration...\n';
+  
+  const sql = `
+CREATE TABLE IF NOT EXISTS ft_reviews (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, name text NOT NULL, event_type text, city text, rating int CHECK (rating >= 1 AND rating <= 5), review text NOT NULL, created_at timestamptz DEFAULT now(), approved boolean DEFAULT true);
+CREATE TABLE IF NOT EXISTS ft_bookings (id uuid DEFAULT gen_random_uuid() PRIMARY KEY, name text NOT NULL, email text NOT NULL, phone text, preferred_date date, guests text, event_type text, notes text, created_at timestamptz DEFAULT now());
+ALTER TABLE ft_reviews ENABLE ROW LEVEL SECURITY;
+ALTER TABLE ft_bookings ENABLE ROW LEVEL SECURITY;
+DO $$ BEGIN CREATE POLICY "read_reviews" ON ft_reviews FOR SELECT USING (true); EXCEPTION WHEN duplicate_object THEN null; END $$;
+DO $$ BEGIN CREATE POLICY "submit_review" ON ft_reviews FOR INSERT WITH CHECK (true); EXCEPTION WHEN duplicate_object THEN null; END $$;
+DO $$ BEGIN CREATE POLICY "submit_booking" ON ft_bookings FOR INSERT WITH CHECK (true); EXCEPTION WHEN duplicate_object THEN null; END $$;
+DO $$ BEGIN CREATE POLICY "read_bookings" ON ft_bookings FOR SELECT USING (true); EXCEPTION WHEN duplicate_object THEN null; END $$;
+  `;
+  
+  try {
+    const resp = await fetch('https://api.supabase.com/v1/projects/wkrtbjvbjebhbcjwurhb/database/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ query: sql })
+    });
+    const text = await resp.text();
+    if (resp.ok) {
+      log.innerHTML += '<span class="ok">SUCCESS! Tables created.</span>\n\n';
+      log.innerHTML += 'You can close this page and go back to forevertide.netlify.app\n';
+      log.innerHTML += 'Reviews and bookings are now live!\n';
+    } else {
+      log.innerHTML += '<span class="err">Error ' + resp.status + '</span>\n' + text + '\n\n';
+      log.innerHTML += 'Make sure you are logged into supabase.com in this browser.\n';
+      log.innerHTML += 'Try visiting supabase.com/dashboard first, then come back here.\n';
+    }
+  } catch(e) {
+    log.innerHTML += '<span class="err">Network error: ' + e.message + '</span>\n';
+    log.innerHTML += 'Make sure you are logged into supabase.com in this browser.\n';
+  }
+}
+</script></body></html>
