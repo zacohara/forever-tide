@@ -239,22 +239,20 @@ export default function ForeverTide(){
         <CN size={30} color={C.taupe} style={{position:"absolute",top:"65%",right:"8%",animation:"dS 17s ease infinite"}} op={.13}/>
 
         <div style={{animation:"hr 1s ease forwards",animationDelay:".2s",opacity:0,zIndex:2}}>
-          <img src={LOGO} alt="Forever Tide" style={{height:"clamp(135px,22vw,240px)",objectFit:"contain",marginBottom:36}}/>
+          <img src={LOGO} alt="Forever Tide" style={{height:"clamp(175px,29vw,312px)",objectFit:"contain",marginBottom:40}}/>
         </div>
-        <div style={{animation:"hr 1s ease forwards",animationDelay:".6s",opacity:0,zIndex:2,maxWidth:660}}>
-          <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(18px,2.4vw,24px)",fontWeight:400,fontStyle:"italic",color:C.textDark,lineHeight:1.7,marginBottom:24}}>
+        <div style={{animation:"hr 1s ease forwards",animationDelay:".6s",opacity:0,zIndex:2,maxWidth:700}}>
+          <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(22px,3vw,30px)",fontWeight:400,fontStyle:"italic",color:C.textDark,lineHeight:1.7,marginBottom:28}}>
             Some things leave a mark that never fades. A person you love, a place that changed you, a moment you still carry. <strong style={{fontWeight:700}}>Forever Tide</strong> turns that connection into something you can hold onto. A way to stay forever tied to whatever means the most.
           </p>
-          <p style={{fontFamily:"'Questrial',sans-serif",fontSize:"clamp(12px,1.5vw,15px)",color:C.textLight,maxWidth:500,margin:"0 auto 48px",letterSpacing:1,lineHeight:1.8}}>
+          <p style={{fontFamily:"'Questrial',sans-serif",fontSize:"clamp(14px,1.8vw,18px)",color:C.textLight,maxWidth:540,margin:"0 auto 48px",letterSpacing:1,lineHeight:1.8}}>
             Custom-fit, claspless permanent jewelry welded on-site at your event. Serving all of Florida.
           </p>
         </div>
-        <div style={{animation:"hr 1s ease forwards",animationDelay:"1s",opacity:0,display:"flex",gap:16,flexWrap:"wrap",justifyContent:"center",zIndex:2}}>
-          <a href="mailto:booking@oharaohana.com?subject=Event" className="btn bf" style={{animation:"gp 2.5s ease infinite",textDecoration:"none"}}>Book Your Event</a>
-          <button className="btn bk" onClick={()=>setShowForm(true)}>Book Private Appointment</button>
-        </div>
-        <div style={{animation:"hr 1s ease forwards",animationDelay:"1.3s",opacity:0,marginTop:16,zIndex:2}}>
-          <button className="btn bsand" style={{padding:"16px 48px",fontSize:12}} onClick={()=>go("packages")}>View Packages</button>
+        <div style={{animation:"hr 1s ease forwards",animationDelay:"1s",opacity:0,display:"flex",flexDirection:"column",gap:14,alignItems:"center",zIndex:2,width:"100%",maxWidth:380}}>
+          <a href="mailto:booking@oharaohana.com?subject=Event" className="btn bf" style={{animation:"gp 2.5s ease infinite",textDecoration:"none",width:"100%",textAlign:"center",padding:"20px 48px",fontSize:14}}>Book Your Event</a>
+          <button className="btn bk" style={{width:"100%",padding:"20px 48px",fontSize:14}} onClick={()=>setShowForm(true)}>Book Private Appointment</button>
+          <button className="btn bsand" style={{width:"100%",padding:"20px 48px",fontSize:14}} onClick={()=>go("packages")}>View Packages</button>
         </div>
         <div data-animate id="stats" style={{animation:"hr 1s ease forwards",animationDelay:"1.7s",opacity:0,marginTop:56,display:"flex",gap:56,flexWrap:"wrap",justifyContent:"center",zIndex:2}}>
           {[{v:c1,s:"+",l:"Guests Linked"},{v:c2,s:"+",l:"Events Hosted"},{v:c3,s:"",l:"Florida Cities"}].map((s,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:42,color:C.steelDark,lineHeight:1}}>{s.v}{s.s}</div><div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.textLight,marginTop:8}}>{s.l}</div></div>))}
