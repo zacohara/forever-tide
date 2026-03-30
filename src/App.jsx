@@ -239,7 +239,7 @@ export default function ForeverTide(){
         <CN size={30} color={C.taupe} style={{position:"absolute",top:"65%",right:"8%",animation:"dS 17s ease infinite"}} op={.13}/>
 
         <div style={{animation:"hr 1s ease forwards",animationDelay:".2s",opacity:0,zIndex:2}}>
-          <img src={LOGO} alt="Forever Tide" style={{height:"clamp(90px,15vw,160px)",objectFit:"contain",marginBottom:36}}/>
+          <img src={LOGO} alt="Forever Tide" style={{height:"clamp(135px,22vw,240px)",objectFit:"contain",marginBottom:36}}/>
         </div>
         <div style={{animation:"hr 1s ease forwards",animationDelay:".6s",opacity:0,zIndex:2,maxWidth:660}}>
           <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(18px,2.4vw,24px)",fontWeight:400,fontStyle:"italic",color:C.textDark,lineHeight:1.7,marginBottom:24}}>
