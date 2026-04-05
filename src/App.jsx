@@ -160,7 +160,7 @@ export default function ForeverTide(){
         .nl{position:relative;color:inherit;text-decoration:none;font-family:'Righteous',cursive;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:4px 0;transition:color .3s}
         .nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:${C.sandBeige};transition:width .4s}.nl:hover::after{width:100%}
         .cc{cursor:pointer;transition:all .45s;border-radius:6px;overflow:hidden}.cc:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(124,145,159,.12)}
-        .btn{display:inline-block;font-family:'Bodoni Moda',serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:18px 48px;border:1.5px solid ${C.steel};background:transparent;color:${C.steel};cursor:pointer;transition:all .35s;text-decoration:none}
+        .btn{display:inline-block;font-family:'Brittany Signature',cursive;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:18px 48px;border:1.5px solid ${C.steel};background:transparent;color:${C.steel};cursor:pointer;transition:all .35s;text-decoration:none}
         .btn:hover{background:${C.steel};color:#fff}.bf{background:${C.steel};color:#fff}.bf:hover{background:${C.steelDeep};border-color:${C.steelDeep}}
         .bk{background:${C.dustyRose};color:#fff;border-color:${C.dustyRose}}.bk:hover{background:${C.roseDark};border-color:${C.roseDark}}
         .bsand{background:${C.sandBeige};color:${C.textDark};border-color:${C.sandBeige}}.bsand:hover{background:${C.taupe};border-color:${C.taupe};color:#fff}
@@ -242,7 +242,7 @@ export default function ForeverTide(){
           <img src={LOGO} alt="Forever Tide" style={{height:"clamp(175px,29vw,312px)",objectFit:"contain",marginBottom:40}}/>
         </div>
         <div style={{animation:"hr 1s ease forwards",animationDelay:".6s",opacity:0,zIndex:2,maxWidth:700}}>
-          <p style={{fontFamily:"'Brittany Signature',cursive",fontSize:"clamp(26px,3.5vw,36px)",fontWeight:400,color:C.textDark,lineHeight:1.7,marginBottom:28}}>
+          <p style={{fontFamily:"'Bodoni Moda',serif",fontSize:"clamp(24px,3.2vw,34px)",fontWeight:400,fontStyle:"italic",color:C.textDark,lineHeight:1.7,marginBottom:28}}>
             Some things leave a mark that never fades. A person you love, a place that changed you, a moment you still carry. <strong style={{fontWeight:700}}>Forever Tide</strong> turns that connection into something you can hold onto. A way to stay forever tied to whatever means the most.
           </p>
           <p style={{fontFamily:"'Questrial',sans-serif",fontSize:"clamp(14px,1.8vw,18px)",color:C.textLight,maxWidth:540,margin:"0 auto 48px",letterSpacing:1,lineHeight:1.8}}>
@@ -289,6 +289,8 @@ export default function ForeverTide(){
       <section className="a1" style={{padding:"64px 24px",position:"relative"}}>
         <SF size={34} color={C.dustyRose} style={{position:"absolute",bottom:16,left:30,animation:"dM 14s ease infinite"}} op={.12}/>
         <SH size={30} color={C.coolBlue} style={{position:"absolute",top:20,right:50,animation:"dS 18s ease infinite"}} op={.1}/>
+        <SD size={28} color={C.sandBeige} style={{position:"absolute",top:"50%",left:"8%",animation:"dS 20s ease infinite"}} op={.1}/>
+        <CN size={24} color={C.taupe} style={{position:"absolute",bottom:"40%",right:"8%",animation:"dM 17s ease infinite"}} op={.09}/>
         <div data-animate id="pf1" className={`av ${vis.pf1?"vi":""}`} style={{maxWidth:900,margin:"0 auto",textAlign:"center"}}>
           <div style={lbl}>Perfect For</div>
           <div className="pf5" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr 1fr",gap:12,marginTop:20}}>
@@ -319,6 +321,8 @@ export default function ForeverTide(){
       <section className="a1" style={{padding:"100px 24px",position:"relative"}}>
         <SD size={44} color={C.coolBlue} style={{position:"absolute",bottom:20,right:40,animation:"dM 20s ease infinite"}} op={.12}/>
         <CN size={36} color={C.sandBeige} style={{position:"absolute",top:50,left:20,animation:"dS 16s ease infinite"}} op={.1}/>
+        <SF size={26} color={C.warmBlush} style={{position:"absolute",top:"30%",right:"3%",animation:"dS 13s ease infinite"}} op={.1}/>
+        <SH size={24} color={C.dustyRose} style={{position:"absolute",bottom:"40%",left:"4%",animation:"dM 19s ease infinite"}} op={.08}/>
         <div data-animate id="s2" className={`av ${vis.s2?"vi":""}`} style={{maxWidth:900,margin:"0 auto",textAlign:"center"}}>
           <div style={lbl}>The Experience</div><h2 style={{...hd(),marginBottom:12}}>How It Works</h2>
           <p style={{...bd(18),color:C.textLight,fontStyle:"italic",marginBottom:56}}>Simple for you. Magical for your guests.</p>
@@ -336,6 +340,9 @@ export default function ForeverTide(){
       <section id="packages" className="a2" style={{padding:"100px 24px",position:"relative"}}>
         <SF size={36} color={C.dustyRose} style={{position:"absolute",top:40,left:30,animation:"dS 15s ease infinite"}} op={.1}/>
         <SH size={28} color={C.coolBlue} style={{position:"absolute",bottom:30,right:40,animation:"dM 20s ease infinite"}} op={.1}/>
+        <SD size={32} color={C.taupe} style={{position:"absolute",top:"60%",left:"2%",animation:"dM 22s ease infinite"}} op={.09}/>
+        <CN size={30} color={C.warmBlush} style={{position:"absolute",bottom:"20%",right:"3%",animation:"dS 18s ease infinite"}} op={.08}/>
+        <SF size={22} color={C.sandBeige} style={{position:"absolute",top:"20%",right:"6%",animation:"dM 14s ease infinite"}} op={.1}/>
         <div data-animate id="s2b" className={`av ${vis.s2b?"vi":""}`} style={{maxWidth:1100,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:56}}><div style={lbl}>Packages</div><h2 style={{...hd(),marginBottom:12}}>Choose Your Experience</h2><p style={{...bd(18),color:C.textLight,fontStyle:"italic"}}>Every package includes full setup, chain collection, charms, and personalized welding.</p></div>
           <div className="g3" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:24,marginBottom:48}}>
@@ -368,6 +375,8 @@ export default function ForeverTide(){
         <SH size={38} color={C.taupe} style={{position:"absolute",top:50,right:40,animation:"dM 17s ease infinite"}} op={.12}/>
         <SD size={40} color={C.coolBlue} style={{position:"absolute",bottom:30,left:50,animation:"dS 14s ease infinite"}} op={.1}/>
         <CN size={32} color={C.dustyRose} style={{position:"absolute",top:"40%",left:"3%",animation:"dM 21s ease infinite"}} op={.1}/>
+        <SF size={28} color={C.sandBeige} style={{position:"absolute",bottom:"15%",right:"5%",animation:"dS 16s ease infinite"}} op={.1}/>
+        <SD size={24} color={C.warmBlush} style={{position:"absolute",top:"25%",left:"6%",animation:"dM 19s ease infinite"}} op={.08}/>
         <div data-animate id="s3" className={`av ${vis.s3?"vi":""}`} style={{maxWidth:1100,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:56}}><div style={lbl}>The Collection</div><h2 style={{...hd(),marginBottom:16}}>Our Chains</h2><p style={{...bd(18),color:C.textLight,fontStyle:"italic"}}>14k solid gold . gold filled . sterling silver</p></div>
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:20}}>
@@ -387,6 +396,8 @@ export default function ForeverTide(){
       <section style={{background:`linear-gradient(135deg,${C.steel},${C.steelDeep})`,padding:"88px 24px",position:"relative",overflow:"hidden"}}>
         <SF size={44} color={C.sandBeige} style={{position:"absolute",bottom:"6%",left:"4%",animation:"dS 12s ease infinite"}} op={.06}/>
         <SD size={36} color={C.sandBeige} style={{position:"absolute",top:"10%",right:"4%",animation:"dM 15s ease infinite"}} op={.05}/>
+        <SH size={28} color={C.sandBeige} style={{position:"absolute",top:"40%",left:"2%",animation:"dM 18s ease infinite"}} op={.04}/>
+        <CN size={26} color={C.sandBeige} style={{position:"absolute",bottom:"20%",right:"3%",animation:"dS 20s ease infinite"}} op={.04}/>
         <div data-animate id="s4" className={`av ${vis.s4?"vi":""}`} style={{maxWidth:1100,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:48}}><div style={{...lbl,color:C.sandBeige}}>Kind Words</div><h2 style={{fontFamily:"'Brittany Signature',cursive",fontSize:"clamp(34px,4.5vw,52px)",color:"#fff",fontWeight:400,textAlign:"center"}}>What Hosts Are Saying</h2></div>
           <div className="g3" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:24}}>
@@ -405,6 +416,8 @@ export default function ForeverTide(){
         <SD size={44} color={C.sandBeige} style={{position:"absolute",top:20,left:30,animation:"dM 18s ease infinite"}} op={.12}/>
         <SF size={30} color={C.dustyRose} style={{position:"absolute",bottom:30,right:40,animation:"dS 14s ease infinite"}} op={.1}/>
         <CN size={36} color={C.taupe} style={{position:"absolute",top:"30%",right:"2%",animation:"dM 20s ease infinite"}} op={.1}/>
+        <SH size={32} color={C.coolBlue} style={{position:"absolute",bottom:"15%",left:"4%",animation:"dS 22s ease infinite"}} op={.1}/>
+        <SD size={26} color={C.warmBlush} style={{position:"absolute",top:"70%",right:"6%",animation:"dM 15s ease infinite"}} op={.09}/>
         <div data-animate id="s5" className={`av g2 ${vis.s5?"vi":""}`} style={{maxWidth:1100,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:80,alignItems:"center"}}>
           <div style={{textAlign:"center"}}>
             <div style={lbl}>Zero Hassle</div><h2 style={{...hd(),marginBottom:24}}>We Come to You</h2>
@@ -428,6 +441,8 @@ export default function ForeverTide(){
       <section className="a1" style={{padding:"80px 24px",position:"relative"}}>
         <SH size={30} color={C.taupe} style={{position:"absolute",bottom:16,right:50,animation:"dS 16s ease infinite"}} op={.1}/>
         <CN size={28} color={C.coolBlue} style={{position:"absolute",top:20,left:40,animation:"dM 19s ease infinite"}} op={.1}/>
+        <SF size={26} color={C.sandBeige} style={{position:"absolute",top:"50%",right:"3%",animation:"dS 14s ease infinite"}} op={.1}/>
+        <SD size={24} color={C.dustyRose} style={{position:"absolute",bottom:"30%",left:"5%",animation:"dM 17s ease infinite"}} op={.09}/>
         <div data-animate id="s6" className={`av ${vis.s6?"vi":""}`} style={{maxWidth:1000,margin:"0 auto",textAlign:"center"}}>
           <div style={lbl}>Service Areas</div><h2 style={{...hd("clamp(32px,4vw,48px)"),marginBottom:48}}>Where We Spark</h2>
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:14}}>
@@ -444,6 +459,8 @@ export default function ForeverTide(){
       <section id="reviews" className="a2" style={{padding:"100px 24px",position:"relative"}}>
         <SF size={36} color={C.sandBeige} style={{position:"absolute",top:30,left:40,animation:"dS 15s ease infinite"}} op={.1}/>
         <SD size={32} color={C.coolBlue} style={{position:"absolute",bottom:40,right:30,animation:"dM 18s ease infinite"}} op={.1}/>
+        <CN size={28} color={C.taupe} style={{position:"absolute",top:"55%",right:"4%",animation:"dS 19s ease infinite"}} op={.09}/>
+        <SH size={24} color={C.warmBlush} style={{position:"absolute",bottom:"25%",left:"3%",animation:"dM 16s ease infinite"}} op={.08}/>
         <div data-animate id="s9" className={`av ${vis.s9?"vi":""}`} style={{maxWidth:900,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:48}}>
             <div style={lbl}>Reviews</div><h2 style={hd()}>What Our Guests Say</h2>
@@ -503,9 +520,11 @@ export default function ForeverTide(){
       <section id="faq" className="a1" style={{padding:"100px 24px",position:"relative"}}>
         <SF size={34} color={C.sandBeige} style={{position:"absolute",top:30,right:40,animation:"dM 13s ease infinite"}} op={.08}/>
         <CN size={26} color={C.taupe} style={{position:"absolute",bottom:40,left:30,animation:"dS 17s ease infinite"}} op={.08}/>
+        <SD size={30} color={C.coolBlue} style={{position:"absolute",top:"45%",left:"2%",animation:"dS 21s ease infinite"}} op={.07}/>
+        <SH size={22} color={C.dustyRose} style={{position:"absolute",bottom:"20%",right:"5%",animation:"dM 15s ease infinite"}} op={.07}/>
         <div data-animate id="s7" className={`av ${vis.s7?"vi":""}`} style={{maxWidth:720,margin:"0 auto"}}>
           <div style={{textAlign:"center",marginBottom:48}}><div style={lbl}>Questions</div><h2 style={hd()}>Frequently Asked</h2></div>
-          {FAQS.map((faq,i)=>(<div key={i} style={{borderBottom:`1px solid ${C.grayBlue}33`,cursor:"pointer",background:"rgba(255,255,255,.35)",marginBottom:2,borderRadius:3}} onClick={()=>setOF(oF===i?null:i)}><div style={{padding:"22px 24px",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16}}><h3 style={{...surf,fontSize:15,color:C.steelDark,fontWeight:400,textAlign:"left",letterSpacing:1}}>{faq.q}</h3><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:30,color:C.coolBlue,transition:"transform .3s",transform:oF===i?"rotate(45deg)":"none",flexShrink:0}}>+</div></div><div className={`fq ${oF===i?"fo":""}`}><p style={{...bd(17),textAlign:"left"}}>{faq.a}</p></div></div>))}
+          {FAQS.map((faq,i)=>(<div key={i} style={{borderBottom:`1px solid ${C.grayBlue}33`,cursor:"pointer",background:"rgba(255,255,255,.35)",marginBottom:2,borderRadius:3}} onClick={()=>setOF(oF===i?null:i)}><div style={{padding:"22px 24px",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16}}><h3 style={{fontFamily:"'Righteous',cursive",fontSize:15,color:C.steelDark,fontWeight:400,textAlign:"left",letterSpacing:1}}>{faq.q}</h3><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:30,color:C.coolBlue,transition:"transform .3s",transform:oF===i?"rotate(45deg)":"none",flexShrink:0}}>+</div></div><div className={`fq ${oF===i?"fo":""}`}><p style={{...bd(17),textAlign:"left"}}>{faq.a}</p></div></div>))}
         </div>
       </section>
 
@@ -514,6 +533,8 @@ export default function ForeverTide(){
         <SF size={44} color={C.taupe} style={{position:"absolute",top:"10%",right:"8%",animation:"dS 14s ease infinite"}} op={.12}/>
         <SD size={40} color={C.coolBlue} style={{position:"absolute",bottom:"12%",left:"6%",animation:"dM 16s ease infinite"}} op={.1}/>
         <CN size={34} color={C.sandBeige} style={{position:"absolute",top:"50%",right:"3%",animation:"dS 20s ease infinite"}} op={.08}/>
+        <SH size={30} color={C.warmBlush} style={{position:"absolute",top:"30%",left:"4%",animation:"dM 18s ease infinite"}} op={.08}/>
+        <SF size={24} color={C.dustyRose} style={{position:"absolute",bottom:"30%",right:"10%",animation:"dS 13s ease infinite"}} op={.09}/>
         <div data-animate id="s8" className={`av ${vis.s8?"vi":""}`} style={{zIndex:2,position:"relative"}}>
           <img src={LOGO} alt="Forever Tide" style={{height:80,objectFit:"contain",marginBottom:28}}/>
           <h2 style={{...hd("clamp(40px,6vw,64px)"),marginBottom:18}}>Your Event Deserves This</h2>
