@@ -160,7 +160,7 @@ export default function ForeverTide(){
         .nl{position:relative;color:inherit;text-decoration:none;font-family:'Righteous',cursive;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:4px 0;transition:color .3s}
         .nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:${C.sandBeige};transition:width .4s}.nl:hover::after{width:100%}
         .cc{cursor:pointer;transition:all .45s;border-radius:6px;overflow:hidden}.cc:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(124,145,159,.12)}
-        .btn{display:inline-block;font-family:'Brittany Signature',cursive;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:18px 48px;border:1.5px solid ${C.steel};background:transparent;color:${C.steel};cursor:pointer;transition:all .35s;text-decoration:none}
+        .btn{display:inline-block;font-family:'Brittany Signature',cursive;font-size:18px;letter-spacing:1px;text-transform:none;padding:18px 48px;border:1.5px solid ${C.steel};background:transparent;color:${C.steel};cursor:pointer;transition:all .35s;text-decoration:none}
         .btn:hover{background:${C.steel};color:#fff}.bf{background:${C.steel};color:#fff}.bf:hover{background:${C.steelDeep};border-color:${C.steelDeep}}
         .bk{background:${C.dustyRose};color:#fff;border-color:${C.dustyRose}}.bk:hover{background:${C.roseDark};border-color:${C.roseDark}}
         .bsand{background:${C.sandBeige};color:${C.textDark};border-color:${C.sandBeige}}.bsand:hover{background:${C.taupe};border-color:${C.taupe};color:#fff}
@@ -255,7 +255,7 @@ export default function ForeverTide(){
           <button className="btn bsand" style={{width:"100%",padding:"20px 48px",fontSize:15}} onClick={()=>go("packages")}>View Packages</button>
         </div>
         <div data-animate id="stats" style={{animation:"hr 1s ease forwards",animationDelay:"1.7s",opacity:0,marginTop:56,display:"flex",gap:56,flexWrap:"wrap",justifyContent:"center",zIndex:2}}>
-          {[{v:c1,s:"+",l:"Guests Linked"},{v:c2,s:"+",l:"Events Hosted"},{v:c3,s:"",l:"Florida Cities"}].map((s,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontFamily:"'Brittany Signature',cursive",fontSize:42,color:C.steelDark,lineHeight:1}}>{s.v}{s.s}</div><div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.textLight,marginTop:8}}>{s.l}</div></div>))}
+          {[{v:c1,s:"+",l:"Guests Linked"},{v:c2,s:"+",l:"Events Hosted"},{v:c3,s:"",l:"Florida Cities"}].map((s,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontFamily:"Tahoma,Verdana,sans-serif",fontSize:40,color:C.steelDark,lineHeight:1,fontStyle:"italic",fontWeight:700,letterSpacing:1}}>{s.v}{s.s}</div><div style={{...surf,fontSize:10,letterSpacing:3,textTransform:"uppercase",color:C.textLight,marginTop:8}}>{s.l}</div></div>))}
         </div>
         <div style={{position:"absolute",bottom:0,left:0,right:0,height:120,zIndex:1}}>
           <svg viewBox="0 0 1350 120" preserveAspectRatio="none" style={{position:"absolute",bottom:0,width:"100%",height:120}}>
